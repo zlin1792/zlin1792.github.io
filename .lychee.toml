@@ -4,7 +4,9 @@ max_retries = 2
 timeout = 20
 
 # Google Scholar often blocks automated requests, so the link is checked by
-# presence in the site spec rather than by live HTTP status.
+# presence in the site spec rather than by live HTTP status. One DOI endpoint
+# is also excluded because it intermittently times out in GitHub Actions.
 exclude = [
-  "https://scholar.google.com/.*"
+  "https://scholar.google.com/.*",
+  "https://doi.org/10.53956/jfde.2021.148"
 ]
