@@ -36,6 +36,7 @@ class SiteParser(HTMLParser):
         self.links = []
         self.images = []
         self.stylesheets = []
+        self.scripts = []
         self.h2 = []
         self.summaries = []
         self.titles = []
@@ -52,6 +53,8 @@ class SiteParser(HTMLParser):
                 raise AssertionError(f"{self.filename}: image is missing alt text")
         elif tag == "link" and attrs.get("rel") == "stylesheet":
             self.stylesheets.append(attrs.get("href", ""))
+        elif tag == "script" and attrs.get("src"):
+            self.scripts.append(attrs["src"])
 
     def handle_endtag(self, tag):
         if tag in VOID_TAGS:
@@ -97,7 +100,7 @@ def check_html_structure():
         parser.feed(content)
         require(not parser.stack, f"{name}: unclosed tags: {parser.stack}")
 
-        for path in parser.images + parser.stylesheets:
+        for path in parser.images + parser.stylesheets + parser.scripts:
             require(path, f"{name}: empty local asset reference")
             require((ROOT / path).exists(), f"{name}: missing asset {path}")
 
@@ -111,6 +114,14 @@ def check_html_structure():
         require(
             "Website designed and built with" in content,
             f"{name}: missing footer credit",
+        )
+        require(
+            "Last updated: <span data-last-updated>May 22, 2026</span>." in content,
+            f"{name}: missing automatic last-updated footer fallback",
+        )
+        require(
+            '<script src="scripts/site.js"></script>' in content,
+            f"{name}: missing shared footer update script",
         )
 
 
