@@ -113,6 +113,15 @@ a:hover {
   font-family: Helvetica, Arial, sans-serif;
 }
 
+.site-footer {
+  margin-top: 48px;
+  padding-top: 18px;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
+}
+
 @media (max-width: 700px) {
   body {
     font-size: 16px;
