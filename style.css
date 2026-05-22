@@ -20,8 +20,8 @@ body {
 }
 
 .page {
-  width: min(920px, calc(100% - 40px));
-  margin: 42px auto 70px;
+  width: min(860px, calc(100% - 40px));
+  margin: 40px auto 70px;
 }
 
 .hero {
@@ -84,7 +84,7 @@ a:hover {
 }
 
 .compact {
-  margin-top: 0;
+  margin: 10px 0 4px;
   padding-left: 22px;
 }
 
@@ -101,6 +101,7 @@ a:hover {
 }
 
 .pubs {
+  margin-top: 12px;
   padding-left: 22px;
 }
 
@@ -111,6 +112,25 @@ a:hover {
 .topnav {
   margin-bottom: 22px;
   font-family: Helvetica, Arial, sans-serif;
+}
+
+.fold {
+  margin: 10px 0;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.fold summary {
+  color: var(--link);
+  cursor: pointer;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  list-style-position: outside;
+}
+
+.fold summary:hover {
+  text-decoration: underline;
 }
 
 .site-footer {
