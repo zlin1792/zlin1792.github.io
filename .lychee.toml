@@ -1,0 +1,10 @@
+accept = [200, 204, 206, 301, 302, 403, 429]
+exclude_mail = true
+max_retries = 2
+timeout = 20
+
+# Google Scholar often blocks automated requests, so the link is checked by
+# presence in the site spec rather than by live HTTP status.
+exclude = [
+  "https://scholar.google.com/.*"
+]

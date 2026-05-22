@@ -1,0 +1,23 @@
+[default]
+extend-ignore-re = [
+  "全球中文发展研究",
+  "千家千律"
+]
+
+[default.extend-words]
+AAAL = "AAAL"
+ACLA = "ACLA"
+AERA = "AERA"
+biliteracy = "biliteracy"
+CSSE = "CSSE"
+DECODA = "DECODA"
+glocal = "glocal"
+Gunderson = "Gunderson"
+Kowkabi = "Kowkabi"
+LLED = "LLED"
+multiliteracies = "multiliteracies"
+posthuman = "posthuman"
+posthumanism = "posthumanism"
+sociomaterial = "sociomaterial"
+Valijärvi = "Valijärvi"
+Zhuravleva = "Zhuravleva"
